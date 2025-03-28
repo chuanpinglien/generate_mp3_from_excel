@@ -15,24 +15,27 @@
 - 可設定多次重複與中間停頓
 - 將所有語音輸出為單一 MP3 檔案
 
-## 🧩 安裝方式
-建議使用虛擬環境安裝所需的python套件，以下為安裝指令
+## 🛠 安裝方式
 
+建議使用虛擬環境安裝所需的 Python 套件。以下為安裝指令：
+
+```bash
 git clone https://github.com/chuanpinglien/generate_mp3_from_excel.git
 cd generate_mp3_from_excel
 pip install -r requirements.txt
 
 ## 🔐 設定 Google 認證（.env 檔）
-為了安全性，建議在專案目錄下建立 .env 檔案，內容如下：
+為了安全性，請在專案根目錄下建立一個 `.env` 檔案，內容如下：
 
+```env
 GOOGLE_APPLICATION_CREDENTIALS=your-google-key.json
 
-並將該金鑰 your-google-key.json 指定路徑。
+請將你的金鑰 your-google-key.json 放在專案資料夾中（與 .env 檔同一層）。
 
-考慮安全性，我並未將.env 或金鑰檔上傳到 GitHub。
+⚠️ 請勿將 .env 或 .json 金鑰上傳到 GitHub！請務必將其加入 .gitignore。
 
 ## 📊 Excel 格式說明
-讀取的 Excel 檔，需要 group_2與settings 分頁，以下為格式說明。
+讀取的 Excel 檔(`myscore6_vocab_groups.xlsx`)，需要 `group_2`與`settings` 兩個分頁，以下為格式說明。
 
 ### group_2 分頁
 group_2 分頁紀錄單字(word)、例句(example)與中文解釋(zh-TW)。
@@ -67,11 +70,15 @@ group_2 分頁紀錄單字(word)、例句(example)與中文解釋(zh-TW)。
 | output prefix  | Longman3000_lv6_group002 |   |
 
 ## 🧪 執行方式
+
+請在終端機中執行下列指令：
+
+```bash
 python generate_mp3_from_excel.py
 
 完成後會輸出一個 MP3 檔案(檔名前綴於上述output prefix中設定)，例如：
 
-Longman3000_lv6_group002.mp3
+`Longman3000_lv6_group002.mp3`
 
 ## ✅ 注意事項
 本專案需配合 Google Cloud Text-to-Speech API 使用，請先開通服務並下載金鑰 xxx.json。
