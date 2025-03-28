@@ -12,8 +12,8 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = cred_path
 
 # 常編輯變數區
 input_filename = "myscore6_vocab_groups.xlsx" # 輸入檔案
-sheet_name_words = 'group_3' # 要讀取的 excel sheet 
-output_prefix = 'Longman3000_lv6_group003' # 輸出mp3檔名
+sheet_name_words = 'group_2' # 要讀取的 excel sheet 
+#output_prefix = 'Longman3000_lv6_group003' # 輸出mp3檔名
 
 # 讀取 Excel
 xls = pd.ExcelFile(input_filename)
@@ -33,7 +33,7 @@ pause = meta_dict.get('pause', ['0.8'])[0]
 lang_list = meta_dict.get('language', ['en-US'])
 repeat = int(meta_dict.get('repeat', [1])[0])
 gender_list = meta_dict.get('gender', ['M'])
-#output_prefix = meta_dict.get('output prefix', ['my_volcabulary'])[0]
+output_prefix = meta_dict.get('output prefix', ['my_volcabulary'])[0]
 
 # 初始化 TTS
 client = texttospeech.TextToSpeechClient()
