@@ -17,18 +17,22 @@
 
 ## 🧩 安裝方式
 建議使用虛擬環境安裝所需的python套件，以下為安裝指令
+
 git clone https://github.com/chuanpinglien/generate_mp3_from_excel.git
 cd generate_mp3_from_excel
 pip install -r requirements.txt
 
 ## 🔐 設定 Google 認證（.env 檔）
-為了安全性，請在專案目錄下建立 .env 檔案，內容如下：
+為了安全性，建議在專案目錄下建立 .env 檔案，內容如下：
+
 GOOGLE_APPLICATION_CREDENTIALS=your-google-key.json
 
-並將該金鑰 .json 放入同一資料夾中。請勿將 .env 或金鑰檔上傳到 GitHub！
+並將該金鑰 your-google-key.json 指定路徑。
+
+考慮安全性，我並未將.env 或金鑰檔上傳到 GitHub。
 
 ## 📊 Excel 格式說明
-請使用以下格式編輯你的 Excel 檔，需要 group_2與settings 分頁
+讀取的 Excel 檔，需要 group_2與settings 分頁，以下為格式說明。
 
 ### group_2 分頁
 group_2 分頁紀錄單字(word)、例句(example)與中文解釋(zh-TW)。
@@ -42,7 +46,7 @@ group_2 分頁紀錄單字(word)、例句(example)與中文解釋(zh-TW)。
 ### settings 分頁
 另一個 settings 分頁是用來記錄聲音與播放參數。
 
-為適應考試有不同腔調、人聲，目前程式寫法為同一單字會播放多種腔調、男聲、女聲。
+為適應考試有不同腔調、人聲，目前程式寫法會將同一單字以男聲、女聲，輪流播放多種腔調。
 
 - `language`：語音腔調（en-US 為美式，en-GB 為英式）
 - `speaking_rate`：語速（單位為倍速，例如 1.0）
