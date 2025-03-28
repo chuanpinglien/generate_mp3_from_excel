@@ -31,26 +31,34 @@ GOOGLE_APPLICATION_CREDENTIALS=your-google-key.json
 請使用以下格式編輯你的 Excel 檔，需要 group_2與settings 分頁
 
 ### group_2 分頁
-由以下格式紀錄單字(word)、例句(example)與中文解釋(zh-TW)：
-word    example                         zh-TW
-apple   I eat an apple every morning.   蘋果
-run	    She runs fast.	                跑
+group_2 分頁紀錄單字(word)、例句(example)與中文解釋(zh-TW)。
+
+範例如下：
+| word  | example                        | zh-TW  |
+|-------|--------------------------------|--------|
+| apple | I eat an apple every morning. | 蘋果   |
+| run   | She runs fast.                | 跑     |
 
 ### settings 分頁
-另一個settings 分頁是用來記錄聲音與播放參數。
-聲音腔調由language設定。en-US，為美國腔英文、en-GB為英國腔英文。
-撥放速度由speaking_rate調整，單位為倍速。 
-男女聲由gender決定。M為男聲、F為女聲。
-音檔前靜音秒數由pause設定，單位為秒。
+另一個 settings 分頁是用來記錄聲音與播放參數：
 
-內容範例如下：
-Key             Value 1	Value 2
-speaking_rate	1.0	
-pause	        0.8	
-language        en-US   en-GB
-gender	        M       F	
-repeat	        2	
-output prefix	Longman3000_lv6_group002	
+- `language`：語音腔調（en-US 為美式，en-GB 為英式）
+- `speaking_rate`：語速（單位為倍速，例如 1.0）
+- `pause`：每段語音之間的靜音秒數
+- `gender`：M 為男聲、F 為女聲
+- `repeat`：每組內容重複次數
+- `output prefix`：輸出檔案名稱前綴
+
+範例如下：
+
+| Key            | Value 1         | Value 2 |
+|----------------|-----------------|---------|
+| speaking_rate  | 1.0             |         |
+| pause          | 0.8             |         |
+| language       | en-US           | en-GB   |
+| gender         | M               | F       |
+| repeat         | 2               |         |
+| output prefix  | Longman3000_lv6_group002 |   |
 
 ## 🧪 執行方式
 python generate_mp3_from_excel.py
