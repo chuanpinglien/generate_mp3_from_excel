@@ -15,32 +15,35 @@
 - 可設定多次重複與中間停頓
 - 將所有語音輸出為單一 MP3 檔案
 
----
-
 ## 🧩 安裝方式
-
+建議使用虛擬環境安裝所需的python套件，以下為安裝指令
 git clone https://github.com/chuanpinglien/generate_mp3_from_excel.git
 cd generate_mp3_from_excel
-
-# 建議使用虛擬環境
 pip install -r requirements.txt
-
 
 ## 🔐 設定 Google 認證（.env 檔）
 為了安全性，請在專案目錄下建立 .env 檔案，內容如下：
-
 GOOGLE_APPLICATION_CREDENTIALS=your-google-key.json
+
 並將該金鑰 .json 放入同一資料夾中。請勿將 .env 或金鑰檔上傳到 GitHub！
 
 ## 📊 Excel 格式說明
-# 請使用以下格式編輯你的 Excel 檔，需要group_2與settings 分頁
+請使用以下格式編輯你的 Excel 檔，需要 group_2與settings 分頁
 
-# group_2 由以下格式紀錄單字、例句與解釋
+### group_2 分頁
+由以下格式紀錄單字(word)、例句(example)與中文解釋(zh-TW)：
 word    example                         zh-TW
 apple   I eat an apple every morning.   蘋果
 run	    She runs fast.	                跑
 
-# 以及另需設定一個 settings 分頁，以記錄聲音與播放參數，內容範例如下(en-US，為美國腔英文、en-GB為英國腔英文)：
+### settings 分頁
+另一個settings 分頁是用來記錄聲音與播放參數。
+聲音腔調由language設定。en-US，為美國腔英文、en-GB為英國腔英文。
+撥放速度由speaking_rate調整，單位為倍速。 
+男女聲由gender決定。M為男聲、F為女聲。
+音檔前靜音秒數由pause設定，單位為秒。
+
+內容範例如下：
 Key             Value 1	Value 2
 speaking_rate	1.0	
 pause	        0.8	
