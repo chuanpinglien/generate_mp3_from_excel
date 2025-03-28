@@ -46,7 +46,7 @@ GOOGLE_APPLICATION_CREDENTIALS=your-google-key.json
 
 ## 📊 Excel 格式說明
 
-請使用以下格式編輯你的 Excel 檔，需包含 `group_2` 與 `settings` 兩個工作分頁：
+請使用以下格式編輯你的 Excel (myscore6_vocab_groups.xlsx)檔，需包含 `group_2` 與 `settings` 兩個工作分頁：
 
 ### group_2 分頁
 
@@ -95,9 +95,13 @@ Longman3000_lv6_group002.mp3
 
 ---
 
+
 ## 📄 授權 License
 
 本專案以 MIT License 授權。使用者可自由修改、引用，僅需保留原作者資訊。
+
+> 本專案依賴 [google-cloud-texttospeech](https://pypi.org/project/google-cloud-texttospeech/)，該套件以 Apache License 2.0 授權。  
+> 使用者需自行取得 Google Cloud API 金鑰，並遵守 Google Cloud Text-to-Speech API 的 [使用條款](https://cloud.google.com/text-to-speech/docs/overview)。  
 
 ---
 
