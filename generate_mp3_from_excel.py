@@ -1,22 +1,24 @@
 
 import os
 import pandas as pd
-from google.cloud import texttospeech
+from google.cloud import texttospeech # 須提前裝好
+from dotenv import load_dotenv
 
-# 設定 Google 認證檔案路徑（請依實際位置修改）
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "main-xxx.json"
+load_dotenv()  # 讀取 .env 檔
+cred_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+if not cred_path:
+    raise EnvironmentError("❌ 缺少 GOOGLE_APPLICATION_CREDENTIALS 環境變數")
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = cred_path
 
-# 輸入檔案
-#input_filename = "my_volcabulary.xlsx"
-input_filename = "myscore6_vocab_groups.xlsx"
-
+# 常編輯變數區
+input_filename = "myscore6_vocab_groups.xlsx" # 輸入檔案
+sheet_name_words = 'group_3' # 要讀取的 excel sheet 
+output_prefix = 'Longman3000_lv6_group003' # 輸出mp3檔名
 
 # 讀取 Excel
 xls = pd.ExcelFile(input_filename)
 meta_raw = pd.read_excel(xls, sheet_name='settings', header=None)
-#words_df = pd.read_excel(xls, sheet_name='group_1')
-words_df = pd.read_excel(xls, sheet_name='group_2')
-output_prefix = 'Longman3000_lv6_group002'
+words_df = pd.read_excel(xls, sheet_name=sheet_name_words)
 
 # 解析 metadata
 meta_dict = {}
