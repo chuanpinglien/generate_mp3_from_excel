@@ -2,5 +2,5 @@
 *.json
 .env
 *.xlsx
-!volcabulary_list_template.xlsx
+!vocabulary_list_template.xlsx
 .commit_template.txt
