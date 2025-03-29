@@ -1,3 +1,6 @@
 *.mp3
 *.json
 .env
+*.xlsx
+!volcabulary_list_template.xlsx
+.commit_template.txt
